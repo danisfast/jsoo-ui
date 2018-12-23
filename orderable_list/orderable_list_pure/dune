@@ -1,0 +1,22 @@
+(library
+    (name orderable_list_pure)
+    (flags (:standard -warn-error -a+31-39))
+    (inline_tests)
+    (libraries
+        core_kernel 
+        yojson
+
+        ppx_deriving_yojson 
+        ppx_deriving_yojson.runtime 
+    )
+    (preprocess (pps
+        ppx_jane
+        ppx_deriving.std 
+        ppx_deriving
+
+        ppx_deriving_yojson 
+        
+        ppx_inline_test
+        ppx_expect
+    ))
+)

@@ -1,0 +1,22 @@
+(executable
+    (name main)
+    (flags (:standard -warn-error -a+31-39))
+    (libraries 
+        core_kernel
+        yojson
+
+        ppx_deriving_yojson 
+        ppx_deriving_yojson.runtime 
+
+        js_of_ocaml 
+        virtual_dom
+        orderable_list
+    )
+    (preprocess (pps 
+        ppx_deriving.std 
+        ppx_deriving 
+        ppx_deriving_yojson 
+        ppx_jane
+        js_of_ocaml-ppx 
+  ))
+)

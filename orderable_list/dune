@@ -1,0 +1,26 @@
+(library
+    (name orderable_list)
+    (flags (:standard -warn-error -a+31-39))
+    (libraries
+        core_kernel 
+        yojson
+        
+        js_of_ocaml 
+        virtual_dom
+
+        ppx_deriving_yojson 
+        ppx_deriving_yojson.runtime 
+
+        orderable_list_pure
+    )
+    (preprocess (pps 
+        js_of_ocaml-ppx 
+        ppx_deriving.std 
+        ppx_deriving 
+        ppx_deriving_yojson 
+        ppx_jane
+    ))
+)
+
+
+ 
