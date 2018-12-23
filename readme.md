@@ -2,6 +2,8 @@
 A drag and drop reorderable list
 Use the grey handle to move the list items
 
+![What it looks like](/example.gif?raw=true "What it looks like")
+
 #### Nice things
 It runs fast because any per-frame rendering is done on a 'transform()' css property (does not trigger a dom layout)
 
