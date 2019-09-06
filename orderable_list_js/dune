@@ -4,13 +4,10 @@
     (libraries
         core_kernel 
         yojson
-        
-        js_of_ocaml 
-        virtual_dom
-
         ppx_deriving_yojson 
         ppx_deriving_yojson.runtime 
-
+        js_of_ocaml 
+        virtual_dom
         orderable_list_abs
     )
     (preprocess (pps 
