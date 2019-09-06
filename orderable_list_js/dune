@@ -1,5 +1,5 @@
 (library
-    (name orderable_list)
+    (name orderable_list_js)
     (flags (:standard -warn-error -a+31-39))
     (libraries
         core_kernel 
@@ -11,7 +11,7 @@
         ppx_deriving_yojson 
         ppx_deriving_yojson.runtime 
 
-        orderable_list_pure
+        orderable_list_abs
     )
     (preprocess (pps 
         js_of_ocaml-ppx 

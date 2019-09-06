@@ -1,14 +1,14 @@
 open! Core_kernel
 
-module type S = Orderable_list_pure.S
+module type S = Orderable_list_abs.S
 
 module Vertical
 (S : S)
 = struct
 
-    module Pure = Orderable_list_pure.Vertical(S)
+    module Abs = Orderable_list_abs.Vertical(S)
 
-    open Pure
+    open Abs
 
     open Js_of_ocaml
     open Virtual_dom
@@ -143,10 +143,12 @@ module Vertical
                 update_items (get_new_items new_t ~items);
                 Vdom.Event.Prevent_default
             in
+            (*
             let onout _ =
                 update_self (fun t -> cancel t);
                 Vdom.Event.Prevent_default
             in
+            *)
             div 
             ~a:[
                 a_style (Printf.sprintf "position: relative; height:%2fpx; display:flex; flex-direction:column; cursor:pointer;" height);

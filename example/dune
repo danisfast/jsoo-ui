@@ -10,7 +10,7 @@
 
         js_of_ocaml 
         virtual_dom
-        orderable_list
+        orderable_list_js
     )
     (preprocess (pps 
         ppx_deriving.std 

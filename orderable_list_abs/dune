@@ -1,5 +1,5 @@
 (library
-    (name orderable_list_pure)
+    (name orderable_list_abs)
     (flags (:standard -warn-error -a+31-39))
     (inline_tests)
     (libraries

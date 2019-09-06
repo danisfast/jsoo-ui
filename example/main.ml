@@ -11,7 +11,7 @@ module Some_list = struct
 
 end
 
-module Layer_list = Orderable_list.Vertical(Some_list)
+module Layer_list = Orderable_list_js.Vertical(Some_list)
 
 module Render = struct
     open Js_of_ocaml
@@ -21,7 +21,7 @@ module Render = struct
     let render_item i =
         div 
             ~a:[ a_style "background-color: white; padding-left: 10px; padding-right: 10px;" ]
-            [ pcdata (Printf.sprintf "Int : %d" i) ]
+            [ txt (Printf.sprintf "Int : %d" i) ]
 
     let render_list ~domain_data ~ui_data ~update_items ~update_self =
         let view = Layer_list.render 
@@ -44,7 +44,7 @@ module Render = struct
         (* initial render *)
 
         let domain_data = [ 1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20; ] in
-        let ui_data = Layer_list.Pure.empty in
+        let ui_data = Layer_list.Abs.empty in
         let update_items _ = () in
         let update_self _ = () in
 
@@ -59,7 +59,7 @@ module Render = struct
         let domain_data = ref domain_data in
         let ui_data = ref ui_data in
         let prev_node = ref vdom_elt in
-        let elt = ref (dom_elt :> Dom.element Js.t) in
+        let elt = ref dom_elt in
 
         let rec loop _ = 
 
